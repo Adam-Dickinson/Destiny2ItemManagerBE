@@ -17,6 +17,9 @@ public class AccessTokenResponse {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "user_token")
+    private String userToken;
+
     @Column(name = "access_token", length = 500)
     private String accessToken;
 
@@ -79,5 +82,13 @@ public class AccessTokenResponse {
 
     public void setMembershipId(String membershipId) {
         this.membershipId = membershipId;
+    }
+
+    public String getUserToken() {
+        return userToken;
+    }
+
+    public void setUserToken(String userToken) {
+        this.userToken = userToken;
     }
 }

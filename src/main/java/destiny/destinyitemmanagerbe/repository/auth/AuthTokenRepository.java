@@ -6,6 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AuthTokenRepository extends JpaRepository<AccessTokenResponse, Long> {
-
-    AccessTokenResponse findFirstByOrderByIdDesc();
+    AccessTokenResponse findByUserToken(String userToken);
 }

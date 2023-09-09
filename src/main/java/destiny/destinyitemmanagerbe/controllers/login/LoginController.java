@@ -42,8 +42,9 @@ public class LoginController {
         AccessTokenResponse tokenResponse = getAccessTokenService.getAccessToken(oauthToken);
 
         String userToken = tokenService.generateUserToken();
+        tokenResponse.setUserToken(userToken); // Store the userToken in the AccessTokenResponse entity
 
-        tokenService.storeToken(userToken, tokenResponse.getAccessToken());
+        tokenService.storeToken(tokenResponse); // Adjusted to store the whole entity
 
         response.sendRedirect("http://localhost:4200/auth-callback?userToken=" + userToken);
     }
