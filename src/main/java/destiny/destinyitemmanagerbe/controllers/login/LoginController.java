@@ -13,15 +13,9 @@ import org.springframework.web.servlet.view.RedirectView;
 
 @RestController
 public class LoginController {
-
-    @Value("${bungie.apiKey}")
-    private String apiKey;
-    @Value("${security.oauth2.client-secret}")
-    private String clientSecret;
+    
     @Value("${security.oauth2.client-id}")
     private String clientID;
-    @Value("${security.oauth2.redirect-uri}")
-    private String redirectUri;
 
     @Autowired
     private TokenService tokenService;
