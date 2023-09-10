@@ -13,7 +13,7 @@ import org.springframework.web.servlet.view.RedirectView;
 
 @RestController
 public class LoginController {
-    
+
     @Value("${security.oauth2.client-id}")
     private String clientID;
 

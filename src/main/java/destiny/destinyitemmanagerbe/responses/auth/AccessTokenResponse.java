@@ -44,7 +44,6 @@ public class AccessTokenResponse {
     }
 
     public String getAccessToken() {
-        // return accessToken;
         return new String(Base64.getDecoder().decode(accessToken));
     }
 
